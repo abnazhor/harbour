@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  mc:
+    restart: always
+    container_name: mc
+    build: .
+    ports:
+      - "25565:25565"
+    volumes:
+      - world:/world
+      - backup:/backup
+      - mods:/mods
+      - config:/config
+volumes:
+  world:
+  backup:
+  mods:
+  config:
