@@ -1,15 +1,26 @@
 FROM alpine:latest
 
-COPY mods /mods
 COPY server.properties /server.properties
-COPY ops.json /ops.json
 COPY world /world
 COPY backup /backup
 COPY config /config
+COPY scripts /scripts
 
-RUN apk add openjdk17
-RUN wget https://meta.fabricmc.net/v2/versions/loader/1.19.3/0.14.14/0.11.1/server/jar -O server.jar
+COPY package.json /package.json
+COPY ops.json /ops.json
+COPY runtime.json /runtime.json
+COPY mods.json /mods.json
+
+RUN apk add openjdk17 nodejs npm
+RUN npm i -g pnpm
+RUN pnpm i
+RUN mkdir mods
+
+RUN pnpm run build
 RUN echo "eula=true" > eula.txt
+
+RUN ls scripts
+RUN ls mods
 
 EXPOSE 25565/tcp
 
