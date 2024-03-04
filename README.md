@@ -30,7 +30,7 @@ docker-compose up --build -d
 
 This folder contains the specific URL from which the server should pull the executable `.jar` file. It must be an URL and needs to return a valid `.jar` file.
 
-This information can be obtained directly from [the game's website](https://piston-data.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/server.jar) in case of using the vanilla version and from [Fabric's server website](https://fabricmc.net/use/server/) in case of using Fabric.
+This information can be obtained directly from [the game's website](https://www.minecraft.net/en-us/download/server) in case of using the vanilla version and from [Fabric's server website](https://fabricmc.net/use/server/) in case of using Fabric.
 
 ### mods.json
 
