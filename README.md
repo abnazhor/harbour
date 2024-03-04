@@ -36,7 +36,7 @@ This information can be obtained directly from [the game's website](https://pist
 
 This is where all the mods are listed. Harbour downloads them directly from the specified source and moves them into the mods folder so you don't have to do anything to set up your mods. A mod entry should contain the following properties to work:
 
-```json
+```jsonc
 
     {
         "name": "Lithium", // Name of the mod
