@@ -9,10 +9,10 @@
 To start from scratch, please run the following command:
 
 ```bash
-npm run setup
+npm run initial-setup
 ```
 
-In case your setup uses pnpm, it should work with `pnpm setup`
+In case your setup uses pnpm, it should work with `pnpm run initial-setup`
 
 This will create the required folders for your base installation. It will also recreate some configuration files such as `mods.json` and `runtime.json`.
 
