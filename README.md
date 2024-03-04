@@ -21,6 +21,6 @@ This will create the required folders for your base installation. It will also r
 To run Harbour on a docker environment, please run the following command:
 
 ```bash
-docker-compose up -d
+docker-compose up --build -d
 ```
 

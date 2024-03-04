@@ -1,4 +1,4 @@
-const DEFAULT_FOLDERS = ["mods", "backup", "config"];
+const DEFAULT_FOLDERS = ["mods", "backup", "config", "world"];
 
 const MODS_CONFIG_EXAMPLE = [
   {
