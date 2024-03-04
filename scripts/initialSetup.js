@@ -1,4 +1,4 @@
-import { mkdirSync, writeFileSync } from "fs";
+import { existsSync, mkdirSync, writeFileSync } from "fs";
 import {
   DEFAULT_FOLDERS,
   OPS_CONFIG_EXAMPLE,
@@ -8,15 +8,13 @@ import {
 } from "../constants.js";
 
 const createFolder = (pathname) => {
-  try {
-    mkdirSync(pathname);
-  } catch (err) {
-    console.log(`Folder with pathname ${pathname} already exists`);
-  }
+  if (!existsSync(pathname)) mkdirSync(pathname);
 };
 
-const createJsonFile = (pathname, content) =>
-  writeFileSync(pathname, JSON.stringify(content, null, 4));
+const createJsonFile = (pathname, content) => {
+  if (!existsSync(pathname))
+    writeFileSync(pathname, JSON.stringify(content, null, 4));
+};
 
 const main = () => {
   for (const folderName of DEFAULT_FOLDERS) {
