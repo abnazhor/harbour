@@ -1,9 +1,17 @@
+# Minecraft server folders
 backup
 config
 mods
 world
+
+# Minecraft base configs
 ops.json
 server.properties
-node_modules
+
+# Harbour specific config files
 mods.json
 runtime.json
+
+# Node.js files
+node_modules
+pnpm-lock.yaml
