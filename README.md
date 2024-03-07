@@ -30,11 +30,11 @@ docker-compose up --build -d
 
 This folder contains the specific URL from which the server should pull the executable `.jar` file. It must be an URL and needs to return a valid `.jar` file.
 
-This information can be obtained directly from [the game's website](https://www.minecraft.net/en-us/download/server) in case of using the vanilla version and from [Fabric's server website](https://fabricmc.net/use/server/) in case of using Fabric.
+This source URL can be obtained directly from [the game's website](https://www.minecraft.net/en-us/download/server) in case of using the vanilla version and from [Fabric's server website](https://fabricmc.net/use/server/) in case of using Fabric.
 
 ### mods.json
 
-This is where all the mods are listed. Harbour downloads them directly from the specified source and moves them into the mods folder so you don't have to do anything to set up your mods. A mod entry should contain the following properties to work:
+This is where all the mods are listed. Harbour downloads them directly from the specified source and moves them into the mods folder so you don't have to do anything. A mod entry should contain the following properties to work:
 
 ```jsonc
 
@@ -46,6 +46,6 @@ This is where all the mods are listed. Harbour downloads them directly from the 
     }
 ```
 
-Most of those properties are just for additional information, as long as you have a valid URL you can leave the rest as empty fields. However, when it comes to maintenance having those three additional fields improves a lot upgrading those mods.
+Most of those properties are just for additional information, as long as you have a valid URL you can leave the rest as empty fields. However, when it comes to maintenance having those three additional fields improves a lot when upgrading.
 
 In case of not requiring any mods, just leave an empty array and you are good to go.
