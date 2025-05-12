@@ -2,19 +2,23 @@
 
 ### A simple docker setup for Minecraft servers
 
-> Harbour has been written to support mods and other runtimes apart from the official one. This means it should be compatible with runtimes such as Forge or Fabric.
+> Harbour is designed to support not only the official runtime, but also alternative ones such as Forge and Fabric, making it flexible for modded server setups.
 
 ## Installing
 
-To start from scratch, please run the following command:
+To set up Harbour from scratch, run the following command:
 
 ```bash
 npm run initial-setup
 ```
 
-In case your setup uses pnpm, it should work with `pnpm run initial-setup`
+If you're using pnpm, the equivalent command is:
 
-This will create the required folders for your base installation. It will also recreate some configuration files such as `mods.json` and `runtime.json`.
+```bash
+pnpm run initial-setup
+```
+
+This will create the necessary directories for your base installation and regenerate configuration files like mods.json and runtime.json.
 
 ## Running Harbour
 
@@ -28,13 +32,15 @@ docker-compose up --build -d
 
 ### runtime.json
 
-This folder contains the specific URL from which the server should pull the executable `.jar` file. It must be an URL and needs to return a valid `.jar` file.
+This folder contains the URL from which the server should download the executable .jar file. The URL must point to a valid .jar file and be accessible via a standard HTTP request.
 
-This source URL can be obtained directly from [the game's website](https://www.minecraft.net/en-us/download/server) in case of using the vanilla version and from [Fabric's server website](https://fabricmc.net/use/server/) in case of using Fabric.
+For the vanilla version, you can obtain this URL from Minecraft's official server download page. If you're using Fabric, use the URL from Fabric’s server download page.
 
 ### mods.json
 
-This is where all the mods are listed. Harbour downloads them directly from the specified source and moves them into the mods folder so you don't have to do anything. A mod entry should contain the following properties to work:
+This section lists all the mods. Harbour automatically downloads each one from its specified source and places it in the mods folder—no manual action required.
+
+For a mod entry to work correctly, it should include the following properties:
 
 ```jsonc
 
@@ -46,6 +52,6 @@ This is where all the mods are listed. Harbour downloads them directly from the 
     }
 ```
 
-Most of those properties are just for additional information, as long as you have a valid URL you can leave the rest as empty fields. However, when it comes to maintenance having those three additional fields improves a lot when upgrading.
+Most of these properties are optional and serve primarily as additional information. As long as you provide a valid URL, the other fields can be left empty. However, including the three additional fields significantly improves the maintenance experience during upgrades.
 
-In case of not requiring any mods, just leave an empty array and you are good to go.
+If no mods are needed, simply use an empty array—that’s all you need.
